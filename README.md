@@ -35,75 +35,60 @@ In Microsoft Azure, we will create a VM and add it to a new Resource Group, titl
 
 - **VM Name:** osticket-vm  
 - **Image:** Windows 10 Pro, version 22H2 - x64 Gen2  
-- **Size:** 2 vCPUs, 8 GiB memory  
+- **Size:** 2 vCPUs, 16 GiB memory  
 
-Check the licensing box and review & create the VM. No changes are needed for management, disks, or networking sections.
+Navigate to the Virtual Machines page and select "Create". For this instance we will create an Azure Virtual Machine.
 
-<p>
-<img src="https://i.imgur.com/Bz829jL.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/9800e626-7256-4d60-8932-ec3f8a4ff31d)
 
-<p>
-<img src="https://i.imgur.com/rHmcRf3.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
-</p>
+Create a new resource group (if needed), name the virtual machine, select the region and the image/operating system.
+
+![image](https://github.com/user-attachments/assets/c9459baa-0df8-4eb5-ad05-cff4450845b5)
+
+Select the preferred cpu size, enter adminstrative credentials, check the licensing box and review & create the VM. No changes are needed for management, disks, or networking sections.
+
+![image](https://github.com/user-attachments/assets/036a8427-19b3-4392-aebe-1cd2a37a884e)
 
 <h3>2.) Accessing the Virtual Machine</h3>
+Retrieve the VM's Public's IP Address and log using **Remote Desktop** with the credentials created during the VM setup. 
 
-- Log into the VM using **Remote Desktop** with the credentials created during the VM setup.
-
-<p>
-<img src="https://i.imgur.com/8IdvRmZ.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/425cf7ca-c821-4662-8caf-8b3a12e0c1d1)
 
 <h3>3.) Download and Prepare Installation Files</h3>
 
 - Within the VM, download the `osTicket-Installation-Files.zip` and unzip it to your desktop. The folder should be named `osTicket-Installation-Files`.
 
-<p>
-<img src="https://i.imgur.com/6imV7Hy.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/78c0c652-ae0b-44a6-9095-e1a65f262434)
 
 <h3>4.) Install IIS and Enable Required Features</h3>
 
-- Open **Control Panel** -> **Programs** -> **Turn Windows features on or off**.
-- Install/enable **IIS** with the following features:
-  - **World Wide Web Services** -> **Application Development Features** -> [X] CGI
+Open **Control Panel** -> **Programs** -> **Turn Windows features on or off**.
+Install/enable **IIS** with the following features:
+- **World Wide Web Services** -> **Application Development Features** -> [X] CGI
 
-<p>
-<img src="https://i.imgur.com/Htr4j9h.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/ce575692-d54f-4e68-9c19-31f209b98703)
 
-<p>
-<img src="https://i.imgur.com/4Q1PaOl.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
-
-<p>
-<img src="https://i.imgur.com/cm20H8J.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/883116ed-58e9-4e41-8e4c-e341c002b07d)
 
 <h3>5.) Install Required Components</h3>
 
-- From the `osTicket-Installation-Files` folder:
-  - Install **PHP Manager for IIS**: `PHPManagerForIIS_V1.5.0.msi`.
-  - Install **Rewrite Module**: `rewrite_amd64_en-US.msi`.
+From the `osTicket-Installation-Files` folder:
+- Install **PHP Manager for IIS**: `PHPManagerForIIS_V1.5.0.msi`.
+- Install **Rewrite Module**: `rewrite_amd64_en-US.msi`.
  
-<p>
-<img src="https://i.imgur.com/TmRwTh9.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/4eb9e7e1-2dbc-492f-b24b-a5b903408d64)
 
 <h3>6.) Setup PHP</h3>
 
-- Create the directory `C:\PHP`.
+- Navigate to the C: drive and create the directory `C:\PHP`.
 - Unzip `PHP 7.3.8` (`php-7.3.8-nts-Win32-VC15-x86.zip`) into the `C:\PHP` folder.
 - Install `VC_redist.x86.exe`.
 
-<p>
-<img src="https://i.imgur.com/Khwf0Tv.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/01775689-93b3-4358-a2e3-c487b89deeaa)
 
-<p>
-<img src="https://i.imgur.com/0IRX6FM.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/3d4f6ee1-19e0-4aa5-a8ac-44eb4f9b0ebf)
+
+![image](https://github.com/user-attachments/assets/d252a171-8001-4bba-9aab-c825b1bc50b8)
 
 <h3>7.) Install MySQL</h3>
 
@@ -113,9 +98,13 @@ Check the licensing box and review & create the VM. No changes are needed for ma
     - **Standard Configuration**
     - Input a username and password, don't forget this!
 
-<p>
-<img src="https://i.imgur.com/m5NO1HX.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/bc906170-3cd3-48a7-9407-2bbb81ab011f)
+
+![image](https://github.com/user-attachments/assets/2ab802bf-5d47-442c-8e54-7495c8cc3ea4)
+
+![image](https://github.com/user-attachments/assets/e875e9c0-25c8-43de-90cd-1e09c0a60a5b)
+
+![image](https://github.com/user-attachments/assets/3aac4005-0ba2-47a7-99ce-00ff23ef532e)
 
 <h3>8.) Configure IIS</h3>
 
@@ -124,29 +113,23 @@ Check the licensing box and review & create the VM. No changes are needed for ma
   - Go to **PHP Manager** -> Register PHP path -> `C:\PHP\php-cgi.exe`.
 - Reload IIS (Stop and Start the server).
 
-<p>
-<img src="https://i.imgur.com/m5NO1HX.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/9c9921ec-29b9-4535-a57f-438ceef44890)
 
-<p>
-<img src="https://i.imgur.com/OPR6ELG.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/19818d96-f441-4776-95e7-7191feab626b)
+
+![image](https://github.com/user-attachments/assets/617c4420-fdbb-45d8-bccc-1599954b01b3)
 
 <h3>9.) Install osTicket</h3>
 
 - From the `osTicket-Installation-Files` folder:
   - Unzip `osTicket-v1.15.8.zip`.
   - Copy the `upload` folder into `C:\inetpub\wwwroot`.
-  - Rename the `upload` folder to `osTicket`.
+  - Rename the `upload` folder to `osTicket` (Exact Spelling!).
 - Reload IIS (Stop and Start the server).
 
-<p>
-<img src="https://i.imgur.com/QAGjmly.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/96683dfc-719c-4550-8541-8cb5e43c974f)
 
-<p>
-<img src="https://i.imgur.com/UNeiP4j.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/921c704a-88cd-47b4-83b0-ba9192ad51d0)
 
 <h3>10.) Configure osTicket</h3>
 
@@ -154,13 +137,9 @@ Check the licensing box and review & create the VM. No changes are needed for ma
   - Navigate to **Sites** -> **Default** -> **osTicket**.
   - On the right, click **Browse *:80**.
 
-<p>
-<img src="https://i.imgur.com/Vo85YbB.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/507c0ee1-b2e0-4c6d-91c0-9360bf0857fb)
 
-<p>
-<img src="https://i.imgur.com/oM0muFz.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/c8c681df-cd3c-46e7-a8af-f65244287cd1)
 
 - Note extensions that are not enabled. Go back to IIS:
   - Navigate to **Sites** -> **Default** -> **osTicket**.
@@ -170,9 +149,9 @@ Check the licensing box and review & create the VM. No changes are needed for ma
     - `php_intl.dll`
     - `php_opcache.dll`
 
-<p>
-<img src="https://i.imgur.com/3w4E5N7.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/db4b4f8a-9b82-4490-b893-062803d63fcc)
+
+![image](https://github.com/user-attachments/assets/e2791584-07af-4113-8ae5-0d5ee5a26162)
 
 <h3>11.) Update Configuration Files</h3>
 
@@ -183,13 +162,11 @@ Check the licensing box and review & create the VM. No changes are needed for ma
   - Disable inheritance -> Remove all permissions.
   - Add new permissions -> **Everyone** -> **Full control**.
 
-<p>
-<img src="https://i.imgur.com/18W6jYt.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/0664e07a-f485-48bc-ae15-38f422ea557e)
 
-<p>
-<img src="https://i.imgur.com/Gj686F9.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/82f10cd7-7170-4175-a941-e758e99b7bba)
+
+![image](https://github.com/user-attachments/assets/3bf9bd9d-b544-4b58-aa6a-ba94f343fbe4)
 
 <h3>12.) Complete osTicket Setup</h3>
 
@@ -197,9 +174,7 @@ Check the licensing box and review & create the VM. No changes are needed for ma
   - Set **Helpdesk Name**.
   - Set **Default email** (receives emails from customers).
 
-<p>
-<img src="https://i.imgur.com/lFfXfPa.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/62e29d96-a2b7-4d07-90cd-f9f1eb334a97)
 
 <h3>13.) Install HeidiSQL and Configure Database</h3>
 
@@ -209,13 +184,13 @@ Check the licensing box and review & create the VM. No changes are needed for ma
   - Connect to the session.
   - Create a database named `osTicket`.
 
-<p>
-<img src="https://i.imgur.com/3MktR5j.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/d8191f58-cefd-43c2-a75d-f3fbf6a355ea)
 
-<p>
-<img src="https://i.imgur.com/45BnPbc.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/008ab508-5f73-4a72-b025-9d722d50b71d)
+
+![image](https://github.com/user-attachments/assets/e4dadf16-0580-47bd-bef4-5d3bac7b4005)
+
+![image](https://github.com/user-attachments/assets/bc87c1aa-3a82-401c-ab9d-cea98ef514bb)
 
 <h3>14.) Finalize osTicket Installation</h3>
 
@@ -225,17 +200,13 @@ Check the licensing box and review & create the VM. No changes are needed for ma
   - **MySQL Password:** root  
 - Click **Install Now!**
 
-<p>
-<img src="https://i.imgur.com/niqOpoY.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/22cea949-b331-432b-ac27-574b0c1ca5e0)
 
 <h3>15.) Verify Installation</h3>
 
 - Access your help desk login page: `http://localhost/osTicket/scp/login.php`.
 
-<p>
-<img src="https://i.imgur.com/fsadUTz.png" height="80%" width="80%" alt="Step 1 Lab 3"/>
-</p>
+![image](https://github.com/user-attachments/assets/362476ac-1d20-4e79-8a70-d5b1f8009656)
 
 <h2>Conclusion</h2>
 
